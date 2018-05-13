@@ -1,0 +1,205 @@
+// http://ionicframework.com/docs/theming/
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+a[href]{
+    text-decoration:none;
+}
+
+//color
+.tint, .item-ios-tint, .label-ios-tint, .list-ios-tint{
+    color:rgba(126, 132, 159, 1);
+}
+
+.toast-message {
+  text-align: center;
+}
+
+.export-private-key-alert {
+  .notice, .private-key {
+    color: #a94442;
+    background-color: #f2dede;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ebccd1;
+    border-radius: 4px;
+  }
+
+  .private-key {
+    color: #000;
+    background-color: #f7f7f9;
+    border-color: #e1e1e8;
+  }
+}
+
+.button-ios-secondary{
+    background-color: rgba(48, 215, 154, 1);
+}
+
+.button-ios-calm {
+    background-color: rgba(32, 193, 212, 1);
+}
+
+.load-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 99;
+  font-size: 2rem;
+  ion-icon {
+    margin-bottom: 5px;
+    font-size: 7rem;
+  }
+}
+
+//header
+.header-ios {
+    .toolbar-background-ios {
+        background-color: #ffffff;
+    }
+    
+    .back-button {
+        color: inherit;
+    }
+}
+
+//item
+ion-app.ios{
+  [padding] {
+    .scroll-content{
+        padding-top:0;
+        padding-bottom:0;
+    }    
+    
+    h1, h2, h3, h4, h5 {
+        &:first-child{
+            margin: 0;
+        }
+    }  
+  }
+  
+  .content-ios-gray{
+      .scroll-content{
+          background-color: rgba(243, 244, 249, 1);
+      }
+  }  
+}  
+
+.item-ios{
+    font-size:1.4rem;
+}
+
+ion-item-group {
+    .item-ios {
+        &.item-block {
+            padding: 0;
+            border-bottom: 0.55px solid rgba(227, 230, 243, 1);
+            .item-inner {
+                padding: 0 !important;
+                border: 0 none;
+            }
+        }
+    }
+}
+
+
+//toolbar
+.toolbar-title-ios{
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+//list
+.list-ios{
+    .item-block{
+        border-bottom:0.55px solid rgba(227, 230, 243, 1) !important;
+        padding:0;
+        
+        .item-inner{
+            border-bottom:0 none;
+            padding:0;
+        }
+        
+        &:first-child, &:last-child{
+            border:0 none;
+        }
+    }
+    
+    .item-wrapper{    
+        &:last-child .item-block{
+            border-bottom:0 none;
+        }
+    }
+    
+    &.select-list {
+        margin-left:-16px;
+        margin-right: -16px;
+        .item-block{
+            padding-left: 16px;
+            padding-right: 16px;  
+        }  
+    }
+}  
+
+
+
+//card
+.card-ios{
+    margin:12px 0;
+    width:100%;
+}
+//footer
+.footer-ios{
+    .button-ios{
+        margin:0;
+    }
+}
+
+//checkbox
+.item{
+    &.item-ios{
+        .checkbox-ios{
+            margin-right:8px;
+        }
+    }
+}
+
+//divider
+.item-divider-ios{
+    background:#ffffff;
+}
+
+//loading
+.load-container{
+    font-size:1.2rem;
+    ion-spinner, ion-icon{
+        margin-right:8px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

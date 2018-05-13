@@ -1,0 +1,21 @@
+page-start {
+  .back-button {
+    display: block;
+  }
+  
+  ion-footer {
+    .toolbar {
+      padding: 0;
+    }
+    .grid {
+      padding: 0;
+      .col {
+        padding: 0;
+        .button {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

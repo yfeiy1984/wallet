@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            导入助记词(BIP39)
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list margin-bottom="0" margin-top="30">
+        <ion-item>
+            <ion-label color="tint" stacked>助记词</ion-label>
+            <ion-textarea placeholder="请输入您的助记词，以空格分割，支持中英文" [(ngModel)]="mnemonic" rows="4"></ion-textarea>
+        </ion-item>
+        <ion-item>
+            <ion-label color="tint" fixed>钱包密码</ion-label>
+            <ion-input type="password" placeholder="不少于6位" clearInput="true" [(ngModel)]="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="tint" fixed>重复密码</ion-label>
+            <ion-input type="password" clearInput="true" [(ngModel)]="repassword"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>我已认真阅读并同意<a href="javascript:void(0);">《{{appConfig.appName}}用户协议》</a></ion-label>
+            <ion-checkbox [(ngModel)]="is_agree"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
+
+<ion-footer>
+    <button ion-button full (click)="import()">开始导入</button>
+</ion-footer>

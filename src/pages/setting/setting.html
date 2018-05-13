@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            设置
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content color="gray">
+    <ion-list>
+        <button ion-item (click)="gotoBackupPage()">
+            <ion-icon name="albums-outline" color="primary" item-start></ion-icon>
+            备份钱包
+        </button>
+        <button ion-item (click)="gotoImportPage()">
+            <ion-icon name="download-outline" color="primary" item-start></ion-icon>
+            导入钱包
+        </button>
+    </ion-list>
+    <ion-list>
+        <button ion-item (click)="gotoAddressRefreshPage()">
+            <ion-icon name="refresh" color="primary" item-start></ion-icon>
+            更新地址
+        </button>
+        <button ion-item (click)="gotoAddressPage()">
+            <ion-icon name="code-download" color="primary" item-start></ion-icon>
+            导出私钥
+        </button>
+    </ion-list>
+    <ion-list>
+        <button ion-item (click)="gotoFqaPage()">
+            <ion-icon name="help-circle-outline" color="primary" item-start></ion-icon>
+            常见问题
+        </button>
+    </ion-list>
+</ion-content>

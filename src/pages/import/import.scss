@@ -1,0 +1,23 @@
+page-import {
+    .label-ios[stacked]{
+        font-size:inherit;
+    }
+    
+    .item-ios{
+        &.item-label-stacked{
+            .label-ios[stacked]{
+                margin-top:0;
+                margin-bottom:11px;
+            }
+            
+            textarea.text-input{
+                margin:0 !important;
+                padding:8px 14px;
+                border-width:0.55px 0.55px 0;
+                border-style: solid;
+                border-color: #e3e6f3;
+                width:100%;
+            }  
+        }
+    }
+}

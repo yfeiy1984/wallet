@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar  hideBackButton="true">
+        <ion-title>
+            {{appConfig.appName}}钱包
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <button ion-button full icon-left (click)="gotoCreatePage()">
+                        <ion-icon name="ios-add-circle-outline"></ion-icon> 创建新钱包
+                    </button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button full icon-left color="calm" (click)="gotoImportPage()">
+                        <ion-icon name="download-outline"></ion-icon> 导入钱包
+                    </button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

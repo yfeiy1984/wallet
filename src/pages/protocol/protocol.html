@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            MTS钱包用户协议
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="article tint" [innerHTML]="content" *ngIf="!loadError && !isLoading"></div>
+
+    <div class="load-container" *ngIf="isLoading">
+        <div>
+            <ion-spinner></ion-spinner>
+            <div>正在加载...</div>
+        </div>
+    </div>
+
+    <div class="load-container" *ngIf="loadError" (click)="ngOnInit()">
+        <div>
+            <ion-icon name="refresh"></ion-icon>
+            <div>点击屏幕，重新加载</div>
+        </div>
+    </div>
+</ion-content>

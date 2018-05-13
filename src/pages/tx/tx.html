@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+           	 交易记录
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-toolbar class="tx-toolbar">
+    	<ion-title>
+    		<ion-icon name="md-checkmark-circle-outline" color="secondary"></ion-icon>
+    	</ion-title>
+    </ion-toolbar>
+    <ion-list *ngIf="coins&&txinfo">
+    	<ion-item>
+    		<ion-title class="tx-val">
+    			<span class="count">
+    				<font *ngIf="!txinfo.isIn">-</font>
+    				{{txinfo.value}}
+    			</span>
+    			<span class="unit">{{coins.name}}</span>
+    		</ion-title>
+    	</ion-item>
+    	<ion-item>
+    		<div class="tx-item">
+	    		<div class="item-name tint">发款方</div>
+	    		<div class="item-ctn">{{txinfo.from}}</div>
+	    	</div>
+	    	<div class="tx-item">
+	    		<div class="item-name tint">收款方</div>
+	    		<div class="item-ctn">{{txinfo.to}}</div>
+	    	</div>
+	    	<div class="tx-item">
+	    		<div class="item-name tint">矿工费用</div>
+	    		<div class="item-ctn">{{coins.balance[0]}}{{coins.name}}</div>
+	    	</div>
+    	</ion-item>
+    	<ion-item>
+    		<div class="tx-item">
+	    		<div class="item-name tint">区块</div>
+	    		<div class="item-ctn">{{txinfo.blockNumber}}</div>
+    		</div>
+    		<div class="tx-item">
+	    		<div class="item-name tint">交易时间</div>
+	    		<div class="item-ctn">{{txinfo.date | date:'yyyy-MM-dd'}}</div>
+    		</div>
+    	</ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="mts"
+    version="1.1.1">
+
+    <engines>
+        <engine name="cordova" version=">=4.0.0" />
+    </engines>
+
+    <name>Mts</name>
+
+    <description>Mts</description>
+
+    <author>Merlin Yang</author>
+
+    <keywords>mts,goback</keywords>
+
+    <license>MIT</license>
+
+    <js-module src="www/mts.js" name="Mts">
+        <clobbers target="cordova.plugins.mts" />
+    </js-module>
+
+    <!-- iOS -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Mts">
+                <param name="ios-package" value="Mts" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/Mts.h" />
+        <source-file src="src/ios/Mts.m" />
+    </platform>
+</plugin>

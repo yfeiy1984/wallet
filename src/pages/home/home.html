@@ -1,0 +1,53 @@
+<ion-header color="home-bg">
+    <ion-navbar>
+        <ion-buttons end (click)="gotoSetting()">
+        	<button ion-button icon-only>
+        		<ion-icon name="cog"></ion-icon>
+        	</button>
+        </ion-buttons>
+        <ion-buttons end (click)="gotoCoinList()">
+            <button ion-button icon-only>
+                <ion-icon name="md-add"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+    <ion-toolbar  class="total-money">
+        <ion-title>
+            ≈￥{{totalRmb}}
+            <div class="total-money-desc">总资产</div>
+        </ion-title>
+    </ion-toolbar>
+    <!--<ion-toolbar class="page-home-segment">
+        <ion-segment [(ngModel)]="coinCategory">
+            <ion-segment-button value="master">
+                主链区
+            </ion-segment-button>
+            <ion-segment-button value="fork">
+                分叉区
+            </ion-segment-button>
+            <ion-segment-button value="erc20">
+                代币区
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>-->
+</ion-header>
+
+<ion-content padding>
+    <ion-list *ngIf="coins">
+        <ng-template ngFor let-item [ngForOf]="coins">
+            <ion-item *ngIf="item.isSelected == true" (click)="gotoCoinPage(item)">
+                <ion-avatar item-start>
+                    <img src="assets/icon/coins/{{item.code}}.png">
+                </ion-avatar>
+                <h2>
+                    {{item.code}}
+                    <span float-right>{{item.balance[item.address_index]}}</span>
+                </h2>
+                <p>
+                    {{item.name}}
+                    <span float-right>≈￥{{item.rmb[item.address_index]}}</span>
+                </p>
+            </ion-item>
+        </ng-template>
+    </ion-list>
+</ion-content>

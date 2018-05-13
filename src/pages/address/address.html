@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            导出私钥
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label>选择币种</ion-label>
+            <ion-select [(ngModel)]="coinType" okText="确定" cancelText="取消" (ionChange)="selectCoin()">
+                <ion-option *ngFor="let item of coinTypes" value="{{item.code}}">{{item.code}}</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
+    <ion-list class="address-list" *ngIf="coin">
+        <button ion-item *ngFor="let address of coin.address_list; let i = index;" (click)="exportPrivateKey(i)">
+            {{address}}
+            <div class="mt5 tint">0.00000000</div>
+        </button>
+    </ion-list>
+</ion-content>

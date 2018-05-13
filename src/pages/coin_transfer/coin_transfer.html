@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            {{coin.code}}
+            转账
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item-group>
+        <ion-item>
+            <ion-input type="text" clearInput="true" placeholder="收款人钱包地址"
+                       [(ngModel)]="transferData.to"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input type="number" clearInput="true" placeholder="转账金额"
+                       [(ngModel)]="transferData.value"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input type="text" clearInput="true" placeholder="备注" [(ngModel)]="transferData.remark"></ion-input>
+        </ion-item>
+    </ion-item-group>
+
+    <ion-item-group class="range">
+        <ion-item-divider>
+            矿工费用
+            <span float-right end ion-text class="tint">
+                {{formatFee(transferData.fee)}}
+            </span>
+        </ion-item-divider>
+        <ion-item>
+            <ion-range [min]="minFee" [max]="maxFee" [(ngModel)]="transferData.fee">
+                <ion-label range-left color="tint">慢</ion-label>
+                <ion-label range-right color="tint">快</ion-label>
+            </ion-range>
+        </ion-item>
+    </ion-item-group>
+
+    <button ion-button full (click)="transfer()">确定</button>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>新增币种</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-list *ngIf="coins">
+		<ng-template ngFor let-item [ngForOf]="coins">
+			<ion-item>
+				<ion-checkbox [(ngModel)]="item.isSelected"></ion-checkbox>
+				<ion-avatar item-start>
+                    <img src="assets/icon/coins/{{item.code}}.png">
+                </ion-avatar>
+				<ion-label>
+                	{{item.name}}
+				</ion-label>
+			</ion-item>
+		</ng-template>
+	</ion-list>
+</ion-content>
+<ion-footer>
+	<button ion-button full (click)="gotoHome(coins)">确认添加</button>
+</ion-footer>

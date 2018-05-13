@@ -1,0 +1,80 @@
+page-coin {
+  ion-footer {
+    .toolbar {
+      padding: 0;
+    }
+    .grid {
+      padding: 0;
+      .col {
+        padding: 0;
+        .button {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  ion-toolbar {
+    padding: 0 !important;
+    .toolbar-background {
+      background-color: #fff;
+    }
+    .address {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .txlist {
+    .input-wrapper {
+      width: 45%;
+      h2 {
+        font-size: 1.5rem;
+        overflow: inherit;
+        text-overflow: inherit;
+      }
+    }
+    .note {
+      width: 55%;
+      text-align: right;
+      font-size: 1.5rem;
+      &.in {
+        color: color($colors, primary);
+      }
+      &.out {
+        color: color($colors, danger);
+      }
+    }
+  }
+   
+  
+  .header-ios-coin-bg{
+      .toolbar-background{
+          background-color:#ffffff;
+      }
+      
+      .total-money {
+        min-height: 120px;
+        &.total-money-height {
+          min-height: 105px;
+        }
+        padding-bottom: 15px;
+            
+        .toolbar-title {
+          font-weight:100;
+          font-size: 2.8rem;
+        }
+    
+        .total-money-desc {
+          font-size: 1.4rem;
+    
+        }
+        
+        .toolbar-background{
+          background-color:rgba(243, 244, 249, 1);
+        }
+      }
+  }
+}

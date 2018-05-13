@@ -1,0 +1,23 @@
+page-coin-transfer {
+    ion-item-group{
+        margin-bottom: 16px;
+        .item-divider-ios{
+            padding-left: 0;
+            .label-ios{
+                margin-right: 0;
+            }
+        }
+        
+        &.range{
+            .item-ios.item-block{
+                border: 0 none;
+                margin-bottom: 40px;
+            }
+        }
+    }
+    
+    .range-ios{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

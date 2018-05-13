@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            更新地址
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list class="select-list" >
+        <ion-item>
+            <ion-label>选择币种</ion-label>
+            <ion-select [(ngModel)]="coinType" okText="确定" cancelText="取消" (ionChange)="selectCoin()">
+                <ion-option *ngFor="let item of coinTypes" value="{{item.code}}">{{item.code}}</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
+    <ion-card>
+        <ion-card-content text-center>
+            <qrcode [data]="coin ? coin.address : ''" [size]="200"></qrcode>
+            <div>{{coin ? coin.address : ''}}</div>
+        </ion-card-content>
+    </ion-card>
+
+    
+    <button ion-button full (click)="refresh()">请求新地址</button>
+    <div text-center ion-text color="muted">请求新地址后，原地址仍可使用</div>
+</ion-content>

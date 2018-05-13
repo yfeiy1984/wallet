@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            备份钱包
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div *ngIf="step == 1">
+        <!--<ion-card>
+            <ion-card-content color="danger">-->
+        <div class="backup-tips color-danger">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            <span color="danger">请将下面的助记词写在一张纸上，保存在安全的地方。如果丢失，您的钱包将无法恢复！</span>
+        </div>
+            <!--</ion-card-content>
+        </ion-card>-->
+
+        <ion-card class="mnemonic">
+            <ion-card-content text-center>
+                {{mnemonic}}
+            </ion-card-content>
+        </ion-card>
+
+        
+        <!--<h3 ion-text color="danger">助记词非常重要！不要丢失或泄露！否则您的币会收到损失！</h3>-->
+        <button ion-button full (click)="startBackup()">开始备份</button>
+        <button ion-button full color="secondary" margin-top="20" (click)="showQrcode()">显示助记词二维码</button>
+    </div>
+
+    <div *ngIf="step == 2">
+        <ion-card class="selected-mnemonics">
+            <ion-card-content text-center [ngClass]="{muted:selectedMnemonicsStr == defaultSelectedMnemonicsStr}">
+                {{selectedMnemonicsStr}}
+            </ion-card-content>
+        </ion-card>
+
+        <ion-grid class="mnemonics-grid">
+            <ion-row>
+                <ion-col col-4 *ngFor="let item of mnemonics">
+                    <button ion-button [color]="item.is_selected ? 'primary' : 'light'" full
+                            (click)="toggleIsSelected(item)">{{item.mnemonic}}</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <h6 text-center>请按顺序选择您刚才写在纸上的助记词</h6>
+        <div padding>
+            <button ion-button full (click)="backup()">确定</button>
+        </div>
+    </div>
+</ion-content>

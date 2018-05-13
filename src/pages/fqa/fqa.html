@@ -1,0 +1,17 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			常见问题
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-list>
+		<ng-template ngFor let-item [ngForOf]="fqalist">
+			<button ion-item color="tint" (click)="gotoFqaDetail(item.id)">
+				{{item.title}}
+			</button>
+		</ng-template>
+	</ion-list>
+</ion-content>

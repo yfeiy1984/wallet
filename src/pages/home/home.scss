@@ -1,0 +1,58 @@
+page-home {
+  ion-toolbar {
+    .icon {
+      font-size: 3.0em !important;
+    }
+  }
+
+  .back-button {
+    display: block;
+  }
+  
+  .header-ios-home-bg{
+      background:url('../assets/imgs/home_bg.jpg') no-repeat top center #325099;
+      background-size:auto 170px;
+      
+      .toolbar-background-ios{
+          background-color:transparent;
+      }
+      
+      .bar-button-default-ios,
+      .toolbar-title-ios{
+          color:#ffffff;
+      }
+      
+      .bar-buttons-ios[end]{
+          margin-left:10px;
+      }
+      
+      .total-money {
+        min-height: 120px;
+        &.total-money-height {
+          min-height: 105px;
+        }
+        padding-bottom: 15px;
+    
+        .toolbar-title {
+          font-weight:100;
+          font-size: 2.8rem;
+        }
+    
+        .total-money-desc {
+          font-size: 1.4rem;
+    
+        }
+      }
+      
+      .page-home-segment.toolbar-ios{
+          min-height:60px;
+          .toolbar-background-ios{
+              background:#ffffff;
+          }
+          
+          .segment-button{
+              max-width:5em;
+          }
+      }
+  }
+}

@@ -1,0 +1,99 @@
+<ion-header color="coin-bg">
+    <ion-navbar>
+        <ion-title>
+            {{coin.code}}
+        </ion-title>
+    </ion-navbar>
+    
+	<ion-toolbar  class="total-money">
+        <ion-title>
+            ≈￥{{totalRmb || '0.00'}}
+            <div class="total-money-desc">总资产</div>
+        </ion-title>
+    </ion-toolbar>
+    <!--<ion-toolbar>
+        <ion-card>
+            <ion-card-content>
+                <div>
+                    <span ion-text color="primary">总余额</span>
+                    <span float-right>{{coin.balance[coin.address_index]}}</span>
+                </div>
+                <div margin-top *ngIf="!isBackup">
+                    地址是.../(//****)/...不备份钱包可是看不到的哦~
+                </div>
+                <div margin-top text-center *ngIf="isBackup">
+                    <div class="address">{{coin.address}}</div>
+                    <div>
+                        <button ion-button icon-left small margin-top (click)="copyAddress()">
+                            <ion-icon name="copy-outline"></ion-icon>
+                            复制地址
+                        </button>
+                    </div>
+                </div>
+            </ion-card-content>
+        </ion-card>
+
+    </ion-toolbar>-->
+    <ion-item-group>
+        <ion-item-divider color="tint">最近交易记录</ion-item-divider>
+    </ion-item-group>
+</ion-header>
+
+<ion-content padding>
+        
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingText="松开后刷新"></ion-refresher-content>
+    </ion-refresher>
+
+    <div class="load-container tint" *ngIf="isLoading">
+        <ion-spinner></ion-spinner>
+        <div>正在加载...</div>
+    </div>
+
+    <div class="load-container tint" *ngIf="loadError" (click)="doRefresh(null, true)">
+        <ion-icon name="refresh"></ion-icon>
+        <div>点击重新加载</div>
+    </div>
+
+    <div *ngIf="!loadError && !isLoading">
+        <ion-list class="txlist" *ngIf="txlist.length > 0">
+            <ion-item *ngFor="let txinfo of txlist" (click)="gotoTxPage(txinfo)">
+                <ion-avatar item-start>
+                    <img src="assets/imgs/{{txinfo.isIn ? 'in' : 'out'}}.png">
+                </ion-avatar>
+                <h2>{{txinfo.txid}}</h2>
+                <p>{{txinfo.date | date:'yyyy-MM-dd'}}</p>
+                <ion-note item-end [ngClass]="{out: !txinfo.isIn, in: txinfo.isIn}">{{txinfo.isIn ? '+' : '-'}}{{txinfo.value}} {{coin.code}}</ion-note>
+            </ion-item>
+        </ion-list>
+
+        <div class="load-container tint" *ngIf="txlist.length == 0">
+            <div *ngIf="txlist.length == 0">
+        		暂无记录...
+            </div>
+        </div>
+
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="txlist.length > 0">
+            <ion-infinite-scroll-content loadingText="正在载入..."></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <button ion-button full icon-left (click)="gotoCoinTransferPage()">
+                        <ion-icon name="ios-cloud-download-outline"></ion-icon> 转账
+                    </button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button full icon-left color="calm" (click)="showAddressQrcode()">
+                        <ion-icon name="ios-cloud-upload-outline"></ion-icon> 收款
+                    </button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

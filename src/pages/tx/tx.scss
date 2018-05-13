@@ -1,0 +1,55 @@
+page-tx {
+    .list-ios {
+        .item-block {
+            &:last-child {
+                border: 0 none !important;
+            }
+            
+            .item-inner {
+                padding: 15px 0;
+            }
+        }
+    }
+    
+    
+    .tx-toolbar {
+        height: 7rem;
+        margin-top: 30px;
+        .toolbar-background-ios {
+            background: #ffffff;
+        }
+        
+        ion-icon {
+            font-size: 7rem;
+        }
+    }
+    
+    .tx-val{
+        .count {
+            font-size: 3rem;
+        }
+        
+        .unit {
+            font-size: 1rem;
+        }
+    }
+    
+    .tx-item {
+        margin-bottom: 15px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        .item-name {
+            margin-bottom: 8px;
+        }
+        
+        .item-ctn {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.25em;
+            white-space: nowrap;
+        }
+    }
+}

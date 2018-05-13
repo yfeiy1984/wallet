@@ -1,0 +1,46 @@
+page-backup {
+    
+  .backup-tips {
+      margin-top: 20px;
+      &.color-danger {
+          color: rgba(240, 115, 81, 1);
+      }  
+  }  
+  
+    
+  ion-card-content.warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+  }
+
+  ion-card.mnemonic {
+    margin: 25px 0 40px;
+
+    ion-card-content {
+      padding: 15px;
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+  }
+
+  .mnemonics-grid {
+    button {
+      margin: 0;
+    }
+    .button-ios-light {
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+  }
+
+  .selected-mnemonics {
+    ion-card-content {
+      padding: 30px 20px;
+      font-size: 1.6rem;
+      text-align: center;
+      &.muted {
+        color: #9e9e9e;
+      }
+    }
+  }
+}
